@@ -17,3 +17,20 @@ python3  pip install python-dotenv
 
 Request Parameters
 grant_type = "client_credentials"
+
+
+response:
+{'artists': {
+    'href': 'https://api.spotify.com/v1/search?offset=0&limit=1&query=ACDC&type=artist',
+    'limit': 1,
+    'next': 'https://api.spotify.com/v1/search?offset=1&limit=1&query=ACDC&type=artist',
+    'offset': 0,
+    'previous': None,
+    'total': 8,
+    'items': [{'external_urls':
+              {'spotify': 'https://open.spotify.com/artist/711MCceyCBcFnzjGY4Q7Un'},
+     'followers': {'href': None, 'total': 30912724},
+     'genres': ['rock', 'hard rock', 'classic rock', 'rock and roll'],
+      'href': 'https://api.spotify.com/v1/artists/711MCceyCBcFnzjGY4Q7Un',
+       'id': '711MCceyCBcFnzjGY4Q7Un',
+        'images': [{'url': 'https://i.scdn.co/image/ab6761610000e5ebc4c77549095c86acb4e77b37', 'height': 640, 'width': 640}, {'url': 'https://i.scdn.co/image/ab67616100005174c4c77549095c86acb4e77b37', 'height': 320, 'width': 320}, {'url': 'https://i.scdn.co/image/ab6761610000f178c4c77549095c86acb4e77b37', 'height': 160, 'width': 160}], 'name': 'AC/DC', 'popularity': 83, 'type': 'artist', 'uri': 'spotify:artist:711MCceyCBcFnzjGY4Q7Un'}]}}
