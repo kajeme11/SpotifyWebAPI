@@ -1,0 +1,19 @@
+create .env file to store client_id and client_secrete from spotify's web api created app
+
+install:
+ pip install python-dotenv
+ or
+ pip3 install python-dotenv
+ or
+ python -m pip install python-dotenv
+ or
+python3  pip install python-dotenv
+
+
+1.Send a Request for an Access Token from Spotify Account server
+-we send the client_id, client_secrete, and grant_type i the request
+2.Use Access Token from response in  following requests to Spotify's Web API
+-receive JSON responses from Spotify's Web API
+
+Request Parameters
+grant_type = "client_credentials"
