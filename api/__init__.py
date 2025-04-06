@@ -1,9 +1,7 @@
-import json
-
 from dotenv import load_dotenv
 import os
 import base64
-from requests import post
+from requests import post, get
 import json
 
 load_dotenv()
@@ -35,11 +33,21 @@ def get_auth_header(token):
     return {"Authorization": "Bearer " + token}
 
 #Search for an artist
-# def find_artist(token, artist):
-#     url = "https://api.spotify.com/v1/search"
-#     headers = get_auth_header(token)
-#     q
+def find_artist(token, artist_name):
+    url = "https://api.spotify.com/v1/search"
+    headers = get_auth_header(token)
+    #get first artist by artist name
+    query = f"?q={artist_name}&type=artist&limit=1"
+
+    query_url = url + query
+    result = get(query_url, headers=headers)
+    json_result = json.loads(result.content)
+    return json_result
 
 
 access_token = get_token()
-print(access_token)
+# print(access_token)
+artist = find_artist(access_token, "ACDC")
+print(artist)
+
+
