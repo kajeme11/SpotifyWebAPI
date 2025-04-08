@@ -41,13 +41,18 @@ def find_artist(token, artist_name):
 
     query_url = url + query
     result = get(query_url, headers=headers)
-    json_result = json.loads(result.content)
-    return json_result
+    json_result = json.loads(result.content)["artists"]["items"]
+
+    if len(json_result) == 0:
+        return None
+    else:
+        return json_result[0]
 
 
 access_token = get_token()
 # print(access_token)
 artist = find_artist(access_token, "ACDC")
 print(artist)
+print(artist["name"])
 
 
